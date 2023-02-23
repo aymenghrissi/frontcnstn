@@ -17,4 +17,11 @@ addManagement( management : any ) {
 
 }  
 
+getDirections() {
+  const url = 'http://localhost:8082/dir/directions';
+  return this.httpClient.get(url);
 }
+
+}
+
+

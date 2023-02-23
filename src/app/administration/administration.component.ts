@@ -22,7 +22,7 @@ export class AdministrationComponent {
  ngOInit(){
 
  }
- addManagement(){
+ addDirection(){
   this.managementService.addManagement(this.management).subscribe(() => {
     alert('Form submitted successfully');
   }, (error) => {
