@@ -26,10 +26,12 @@ import { ServicemanagementService } from '../services/servicemanagement.service'
 })
 export class ListadministrationComponent {
   directions: any[] = [];
+  id : any;
   constructor(private servicemanagement : ServicemanagementService){
     servicemanagement.getDirections().subscribe((data: any) => {
       this.directions = data;
     });
+    servicemanagement.deletedir(this.id).subscribe();
   }
 
 }

@@ -1,17 +1,28 @@
-<table>
+<table datatable class="table ">
     <thead>
       <tr>
         <th>ID</th>
         <th>Nom</th>
         <th>Description</th>
+        <th>delete</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let direction of directions">
+      <tr *ngFor="let direction of directions$ | async">
         <td>{{ direction.id }}</td>
         <td>{{ direction.nom }}</td>
         <td>{{ direction.description }}</td>
+        <td><button
+          mat-icon-button
+          color="accent"
+          (click)="deletedir(direction.id)"
+        >
+          <mat-icon aria-label="delete" class="md-20"
+              >delete</mat-icon
+          >
+      </button></td>
       </tr>
     </tbody>
   </table>
+
   
