@@ -17,7 +17,7 @@ export class AdministrationComponent {
     description: '',
     nom: ''
   };
-  constructor(private managementService: ServicemanagementService) { }
+  constructor(private managementService: ServicemanagementService, private router: Router) { }
 
  ngOInit(){
 
@@ -25,6 +25,7 @@ export class AdministrationComponent {
  addDirection(){
   this.managementService.addManagement(this.management).subscribe(() => {
     alert('Form submitted successfully');
+    this.router.navigateByUrl('/listcat');
   }, (error) => {
     console.error('Error submitting form', error);
     alert('Error submitting form');

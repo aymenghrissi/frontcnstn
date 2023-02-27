@@ -21,7 +21,7 @@ getDirections() {
   const url = 'http://localhost:8082/dir/directions';
   return this.httpClient.get(url);
 }
-deletedir(id : String){
+deletedir(id : Number){
   
   return this.httpClient.delete('http://localhost:8082/dir/'+id);
 

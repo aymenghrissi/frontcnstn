@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServiceservService } from '../services/serviceserv.service';
 import { ServicemanagementService } from '../services/servicemanagement.service';
 import { Serv } from '../serv';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-service',
@@ -18,7 +19,7 @@ export class ServiceComponent {
     direction:  { id : 0} 
     
   };
-  constructor(private Service: ServiceservService, private servicemanagement: ServicemanagementService) { }
+  constructor(private Service: ServiceservService, private servicemanagement: ServicemanagementService, private router: Router) { }
   ngOnInit() {
     this.servicemanagement.getDirections().subscribe((data: any) => {
       this.directions = data;
@@ -33,7 +34,9 @@ addservice(){
   this.Service.addservice(this.newserv).subscribe(() => {
     console.log(this.newserv)
     alert('Form submitted successfully');
-    console }, (error) => {
+    this.router.navigateByUrl('/listserv');
+  }, 
+  (error) => {
     console.error('Error submitting form', error);
     alert('Error submitting form');
   });

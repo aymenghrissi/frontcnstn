@@ -4,34 +4,30 @@ import { ServicemanagementService } from '../services/servicemanagement.service'
 
 @Component({
   selector: 'app-listadministration',
-  template:  `
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let direction of directions">
-        <td>{{ direction.id }}</td>
-        <td>{{ direction.nom }}</td>
-        <td>{{ direction.description }}</td>
-      </tr>
-    </tbody>
-  </table>`
-,
+  templateUrl: './listadministration.component.html',
   styleUrls: ['./listadministration.component.css']
 })
 export class ListadministrationComponent {
   directions: any[] = [];
-  id : any;
-  constructor(private servicemanagement : ServicemanagementService){
-    servicemanagement.getDirections().subscribe((data: any) => {
-      this.directions = data;
-    });
-    servicemanagement.deletedir(this.id).subscribe();
+  constructor(private servicemanagement: ServicemanagementService) {
+    this.getDirections();
   }
 
+  getDirections() {
+    this.servicemanagement.getDirections().subscribe((data: any) => {
+      this.directions = data;
+    });
+  }
+
+  deleteDir(id: number) {
+    this.servicemanagement.deletedir(id).subscribe(() => {
+      // Update the directions list after deleting the direction
+      this.getDirections();
+    });
+  }
 }
+
+
+
+
+
