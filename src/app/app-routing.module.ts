@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListadministrationComponent } from './listadministration/listadministration.component';
 import { ServiceComponent } from './service/service.component';
 import { ListserviceComponent } from './listservice/listservice.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { ListemployeeComponent } from './listemployee/listemployee.component';
 
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'listcat', component: ListadministrationComponent },
   { path: 'addserv', component: ServiceComponent },
   { path: 'listserv', component: ListserviceComponent },
+  { path: 'addemp', component: EmployeeComponent },
+  { path: 'listemp', component: ListemployeeComponent },
 ];
 
 @NgModule({

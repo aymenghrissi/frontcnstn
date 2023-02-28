@@ -1,0 +1,47 @@
+<div class="container mt-3">
+    <h2>Employee</h2>
+    <form  (ngSubmit)="addemp()" #form="ngForm">
+      <div class="mb-3 mt-3">
+        <label for="name">nom:</label>
+        <input type="text" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.nom" >
+        
+      </div>
+      <div class="mb-3">
+        <label for="description">prenom:</label>
+        <input type="text" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.prenom" >
+      </div>
+      
+        
+        <div class="mb-3">
+            <label for="cin">cin:</label>
+            <input type="number" class="form-control" id="cin" placeholder="Enter cin" name="cin" [(ngModel)]="newemp.cin" >
+        </div>
+        <div class="mb-3">
+            <label for="tel">numero telephone:</label>
+            <input type="number" class="form-control" id="tel" placeholder="nombre de telephone" name="tel" [(ngModel)]="newemp.tel" >
+        </div>
+        <div class="mb-3">
+            <label for="matricule">matricule:</label>
+            <input type="number" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.matricule" >
+        </div>
+        <div class="mb-3">
+            <label for="adresse">adresse:</label>
+            <input type="text" class="form-control" id="adresse" placeholder="Enter adresse" name="adresse" [(ngModel)]="newemp.adresse" >
+        </div>
+        <div class="mb-3">
+            <label for="poste">poste:</label>
+            <input type="text" class="form-control" id="poste" placeholder="Enter poste" name="poste" [(ngModel)]="newemp.poste" >
+        </div>
+
+          <div class="mb-3">
+        <select class="form-select" [(ngModel)]="newemp.service" name="direction_id" required >
+          <option *ngFor="let service of services" [ngValue]="service">
+            {{service.nom}}
+          </option>
+        </select>
+        
+      </div>
+    
+      <button type="submit"  class="btn btn-primary">Submit</button>
+  </form>
+  </div>

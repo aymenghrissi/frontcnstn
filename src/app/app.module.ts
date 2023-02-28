@@ -13,6 +13,8 @@ import { Management } from './management';
 import { ListadministrationComponent } from './listadministration/listadministration.component';
 import { ServiceComponent } from './service/service.component';
 import { ListserviceComponent } from './listservice/listservice.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { ListemployeeComponent } from './listemployee/listemployee.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ListserviceComponent } from './listservice/listservice.component';
     ListadministrationComponent,
     ServiceComponent,
     ListserviceComponent,
+    EmployeeComponent,
+    ListemployeeComponent,
     
   ],
   imports: [
