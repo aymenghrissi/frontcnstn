@@ -14,9 +14,9 @@ export class ServiceComponent {
 
   newserv : Serv = {
     
-    description: '',
-    nom: '',
-    direction:  { id : 0} 
+    description: "",
+    nom: "",
+    direction:  { id: 0} 
     
   };
   constructor(private Service: ServiceservService, private servicemanagement: ServicemanagementService, private router: Router) { }
@@ -32,10 +32,10 @@ export class ServiceComponent {
   
 addservice(){
   this.Service.addservice(this.newserv).subscribe(() => {
-    console.log(this.newserv)
+    //console.log(this.newserv)
     alert('Form submitted successfully');
     this.router.navigateByUrl('/listserv');
-  }, 
+  console}, 
   (error) => {
     console.error('Error submitting form', error);
     alert('Error submitting form');

@@ -20,4 +20,10 @@ getServices() {
   const url = 'http://localhost:8082/service/list';
   return this.httpClient.get(url);
 }
+deleteserv(id : Number){
+  
+  return this.httpClient.delete('http://localhost:8082/service/'+id);
+
+
+}
 }

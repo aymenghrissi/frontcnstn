@@ -13,10 +13,7 @@
         <td>{{ direction.id }}</td>
         <td>{{ direction.nom }}</td>
         <td>{{ direction.description }}</td>
-        <td>
-          <button mat-icon-button color="accent" (click)="deleteDir(direction.id)">Delete
-        
-          </button>
+          <td><button type="button" class="btn btn-danger" (click)="deleteDir(direction.id)">Delete</button></td>
       </tr>
     </tbody>
   </table>

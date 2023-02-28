@@ -21,7 +21,6 @@ export class ListadministrationComponent {
 
   deleteDir(id: number) {
     this.servicemanagement.deletedir(id).subscribe(() => {
-      // Update the directions list after deleting the direction
       this.getDirections();
     });
   }
