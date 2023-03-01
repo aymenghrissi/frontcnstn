@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from '../employee';
 import { ServiceemployeeService } from '../services/serviceemployee.service';
 
 @Component({
@@ -17,10 +18,12 @@ export class ListemployeeComponent {
       this.employees = data;
     });
   }
-
-  deleteemp(id: number) {
+emp : any = this.employees ;
+  deleteemp(id: number , nom : String) {
+    if(confirm("are you sure to delete  "+nom)){
     this.servicemp.deleteemp(id).subscribe(() => {
       this.getemployee();
     });
+  }
   }
 }

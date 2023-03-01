@@ -12,7 +12,7 @@
         <td>{{ service.id }}</td>
         <td>{{ service.nom }}</td>
         <td>{{ service.description }}</td>
-        <td><button type="button" class="btn btn-danger" (click)="deleteServ(service.id)">Delete</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteServ(service.id,service.nom)">Delete</button></td>
       </tr>
     </tbody>
   </table>

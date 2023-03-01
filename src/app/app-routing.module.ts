@@ -8,6 +8,8 @@ import { ServiceComponent } from './service/service.component';
 import { ListserviceComponent } from './listservice/listservice.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ListemployeeComponent } from './listemployee/listemployee.component';
+import { SalleComponent } from './salle/salle.component';
+import { ListsalleComponent } from './listsalle/listsalle.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'listserv', component: ListserviceComponent },
   { path: 'addemp', component: EmployeeComponent },
   { path: 'listemp', component: ListemployeeComponent },
+  { path: 'addsalle', component: SalleComponent },
+  { path: 'listsalle', component: ListsalleComponent },
 ];
 
 @NgModule({

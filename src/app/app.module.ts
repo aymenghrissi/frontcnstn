@@ -15,6 +15,8 @@ import { ServiceComponent } from './service/service.component';
 import { ListserviceComponent } from './listservice/listservice.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ListemployeeComponent } from './listemployee/listemployee.component';
+import { SalleComponent } from './salle/salle.component';
+import { ListsalleComponent } from './listsalle/listsalle.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ListemployeeComponent } from './listemployee/listemployee.component';
     ListserviceComponent,
     EmployeeComponent,
     ListemployeeComponent,
+    SalleComponent,
+    ListsalleComponent,
     
   ],
   imports: [

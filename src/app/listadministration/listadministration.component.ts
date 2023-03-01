@@ -19,10 +19,12 @@ export class ListadministrationComponent {
     });
   }
 
-  deleteDir(id: number) {
+  deleteDir(id: number,nom: String) {
+    if(confirm("are you sure to delete  "+nom)){
     this.servicemanagement.deletedir(id).subscribe(() => {
       this.getDirections();
     });
+  }
   }
 }
 

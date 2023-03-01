@@ -13,7 +13,7 @@
         <td>{{ direction.id }}</td>
         <td>{{ direction.nom }}</td>
         <td>{{ direction.description }}</td>
-          <td><button type="button" class="btn btn-danger" (click)="deleteDir(direction.id)">Delete</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="deleteDir(direction.id,direction.nom)">Delete</button></td>
       </tr>
     </tbody>
   </table>

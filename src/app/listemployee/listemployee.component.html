@@ -22,7 +22,7 @@
         <td>{{ employee.adresse }}</td>
         <td>{{ employee.poste}}</td>
         <td>{{ employee.matricule}}</td>
-          <td><button type="button" class="btn btn-danger" (click)="deleteemp(employee.id)">Delete</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="deleteemp(employee.id,employee.nom)">Delete</button></td>
       </tr>
     </tbody>
   </table>

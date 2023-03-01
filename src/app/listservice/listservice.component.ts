@@ -20,9 +20,11 @@ export class ListserviceComponent {
     });
   }
 
-  deleteServ(id: number) {
+  deleteServ(id: number, nom : String) {
+    if(confirm("are you sure to delete  "+nom)){
     this.service.deleteserv(id).subscribe(() => {
       this.getService();
     });
+  }
   }
 }
