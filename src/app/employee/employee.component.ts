@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from '../employee';
 import { ServiceemployeeService } from '../services/serviceemployee.service';
 import { ServiceservService } from '../services/serviceserv.service';
@@ -9,7 +10,7 @@ import { ServiceservService } from '../services/serviceserv.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
-  constructor(private employee : ServiceemployeeService ,private service  : ServiceservService){}
+  constructor(private employee : ServiceemployeeService ,private service  : ServiceservService,private router: Router){}
   services: any;
 
   newemp : Employee = {
@@ -19,7 +20,9 @@ export class EmployeeComponent {
     tel: 0 ,
     matricule: 0 ,
     adresse:"",
-    poste:""
+    poste:"",
+    service:{id : 0}
+
   };
   ngOnInit() {
     this.service.getServices().subscribe((data: any) => {
@@ -32,6 +35,7 @@ export class EmployeeComponent {
       this.employee.addEmployee(this.newemp).subscribe(() => {
         //console.log(this.newserv)
         alert('Form submitted successfully');
+        this.router.navigateByUrl('/listemp');
        // this.router.navigateByUrl('/listserv');
       console}, 
       (error) => {
