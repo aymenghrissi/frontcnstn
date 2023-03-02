@@ -1,0 +1,42 @@
+<div class="card border-info mb-3" style="max-width: 25rem; margin: auto; margin-top: 20px;">
+    <div class="card-header">Reservation</div>
+    <div class="card-body">
+        <h5 class="card-title">Reservez votre salle</h5>
+        <div>
+            <form (ngSubmit)="addreserv()" #form="ngForm">
+                <div class="mb-3 mt-3">
+                    <label for="name">date de debut:</label>
+                    <input type="date" class="form-control" id="name" placeholder="Entrer la date de debut" name="Name"
+                        [(ngModel)]="newres.date_d">
+
+                </div>
+                <div class="mb-3">
+                    <label for="description">date de fin:</label>
+                    <input type="date" class="form-control" id="description" placeholder="Entrer la date fin"
+                        name="Description" [(ngModel)]="newres.date_f">
+                </div>
+                <div class="mb-3">
+
+                    <select class="form-select" [(ngModel)]="newres.salle" name="salle_id" required>
+                        <option *ngFor="let Salle of salles" [ngValue]="Salle">
+                            {{Salle.nom}}
+                        </option>
+                    </select>
+
+                </div>
+                <div class="mb-3">
+
+                    <select class="form-select" [(ngModel)]="newres.employee" name="employee_id" required>
+                        <option *ngFor="let employee of employees" [ngValue]="employee">
+                            {{employee.nom}} {{employee.prenom}}
+                        </option>
+                    </select>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+
+    </div>

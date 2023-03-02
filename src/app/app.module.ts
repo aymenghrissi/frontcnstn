@@ -17,6 +17,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ListemployeeComponent } from './listemployee/listemployee.component';
 import { SalleComponent } from './salle/salle.component';
 import { ListsalleComponent } from './listsalle/listsalle.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ListsalleComponent } from './listsalle/listsalle.component';
     ListemployeeComponent,
     SalleComponent,
     ListsalleComponent,
+    ReservationComponent,
     
   ],
   imports: [

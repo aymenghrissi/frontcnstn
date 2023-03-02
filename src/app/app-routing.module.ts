@@ -10,6 +10,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ListemployeeComponent } from './listemployee/listemployee.component';
 import { SalleComponent } from './salle/salle.component';
 import { ListsalleComponent } from './listsalle/listsalle.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'listemp', component: ListemployeeComponent },
   { path: 'addsalle', component: SalleComponent },
   { path: 'listsalle', component: ListsalleComponent },
+  { path: 'addres', component: ReservationComponent },
 ];
 
 @NgModule({
