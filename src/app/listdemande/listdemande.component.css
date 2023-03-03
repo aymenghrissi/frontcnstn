@@ -1,0 +1,24 @@
+.table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  tr:hover {
+    background-color: rgb(226, 236, 81);
+  }
+  
+  th {
+    background-color: #f83232;
+    color: white;
+  }
+  
+  td {
+    padding: 4px;
+    border: 1px solid #ddd;
+  }
+  .button:hover {
+    background-color: #e70000; 
+    color: rgb(117, 36, 36);
+  }
+    
+  

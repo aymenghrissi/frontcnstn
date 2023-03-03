@@ -11,6 +11,9 @@ import { ListemployeeComponent } from './listemployee/listemployee.component';
 import { SalleComponent } from './salle/salle.component';
 import { ListsalleComponent } from './listsalle/listsalle.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ListreservationComponent } from './listreservation/listreservation.component';
+import { DemandeComponent } from './demande/demande.component';
+import { ListdemandeComponent } from './listdemande/listdemande.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,9 @@ const routes: Routes = [
   { path: 'addsalle', component: SalleComponent },
   { path: 'listsalle', component: ListsalleComponent },
   { path: 'addres', component: ReservationComponent },
+  { path: 'listres', component: ListreservationComponent },
+  { path: 'adddem', component: DemandeComponent },
+  { path: 'listdem', component: ListdemandeComponent },
 ];
 
 @NgModule({

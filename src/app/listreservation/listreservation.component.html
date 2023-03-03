@@ -1,0 +1,20 @@
+<table datatable class="table ">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>date de debut</th>
+        <th>date de fin</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.id }}</td>
+        <td>{{ reservation.date_d }}</td>
+        <td>{{ reservation.date_f }}</td>
+       
+          <td><button type="button" class="btn btn-danger" (click)="deletesalle(reservation.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+

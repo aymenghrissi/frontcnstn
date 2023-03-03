@@ -1,0 +1,21 @@
+<table datatable class="table ">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date demande</th>
+        <th>Matériel demander</th>
+        <th>Employee</th>
+        <th>Delete</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let demande of demandes">
+        <td>{{ demande.id }}</td>
+        <td>{{ demande.date_demmande }}</td>
+        <td>{{ demande.materiel_demmander}}</td>
+        <td>{{ demande. employee_id}}</td>
+        <td><button type="button" class="btn btn-danger"  (click)="deletedemande(demande.id,demande.nom)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>

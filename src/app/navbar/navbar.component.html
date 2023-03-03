@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-ligh " style="background-color: #ffae21;">
+<nav class="navbar navbar-expand-lg navbar-ligh " style="background-color: #fda205;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">CNSTN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +29,19 @@
               <li><a routerLink="addsalle" class="dropdown-item" href="#">ajouter une salle</a></li>
               <li><a routerLink="listsalle" class="dropdown-item" href="#">list des salles</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a routerLink="addres" class="dropdown-item" href="#">ajouter une reservation</a></li>
+              <li><a routerLink="listres" class="dropdown-item" href="#">list des reservations</a></li>
+              <li><a routerLink="listdem" class="dropdown-item" href="#">list des demandes</a></li>
 
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+          <li>
+            <a class="nav-link active" routerLink="addres"  href="#">reservation</a>
+          </li>
+          <li>
+            <a class="nav-link active" routerLink="adddem"  href="#">demande de matriel</a>
           </li>
         </ul>
         <form class="d-flex">

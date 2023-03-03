@@ -18,6 +18,9 @@ import { ListemployeeComponent } from './listemployee/listemployee.component';
 import { SalleComponent } from './salle/salle.component';
 import { ListsalleComponent } from './listsalle/listsalle.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ListreservationComponent } from './listreservation/listreservation.component';
+import { DemandeComponent } from './demande/demande.component';
+import { ListdemandeComponent } from './listdemande/listdemande.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { ReservationComponent } from './reservation/reservation.component';
     SalleComponent,
     ListsalleComponent,
     ReservationComponent,
+    ListreservationComponent,
+    DemandeComponent,
+    ListdemandeComponent,
     
   ],
   imports: [
