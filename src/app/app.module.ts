@@ -21,6 +21,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { ListreservationComponent } from './listreservation/listreservation.component';
 import { DemandeComponent } from './demande/demande.component';
 import { ListdemandeComponent } from './listdemande/listdemande.component';
+import { UpdatedirComponent } from './updatedir/updatedir.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ListdemandeComponent } from './listdemande/listdemande.component';
     ListreservationComponent,
     DemandeComponent,
     ListdemandeComponent,
+    UpdatedirComponent,
     
   ],
   imports: [

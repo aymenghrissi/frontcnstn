@@ -14,6 +14,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { ListreservationComponent } from './listreservation/listreservation.component';
 import { DemandeComponent } from './demande/demande.component';
 import { ListdemandeComponent } from './listdemande/listdemande.component';
+import { UpdatedirComponent } from './updatedir/updatedir.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'listres', component: ListreservationComponent },
   { path: 'adddem', component: DemandeComponent },
   { path: 'listdem', component: ListdemandeComponent },
+  { path: 'updir', component: UpdatedirComponent },
 ];
 
 @NgModule({

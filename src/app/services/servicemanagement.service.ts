@@ -27,5 +27,16 @@ deletedir(id : Number){
 
 
 }
+updatedir(id:Number , direction : Management): Observable<Management>{
+  const url='http://localhost:8082/dir/directions/'
+
+  return this.httpClient.put<Management>(url+id, direction);
+
+}
+
+getDirectionById(id: Number){
+  const url='http://localhost:8082/dir/'
+  return this.httpClient.get( url+id);
+}
 }
 

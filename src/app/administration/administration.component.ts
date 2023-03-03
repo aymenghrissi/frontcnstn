@@ -11,6 +11,12 @@ import { Route, Router } from '@angular/router';
 })
 
 export class AdministrationComponent {
+  condition: boolean=false;
+  dirdetails: Management={
+    description:'',
+    nom:''
+
+  };
 
   management = {
     
@@ -31,7 +37,7 @@ export class AdministrationComponent {
     alert('Error submitting form');
   });
 }
- 
+
 
 }
 
