@@ -15,7 +15,7 @@
         <td>{{ direction.nom }}</td>
         <td>{{ direction.description }}</td>
           <td><button type="button" class="btn btn-danger" (click)="deleteDir(direction.id,direction.nom)">Delete</button></td>
-          <td>        <button type="submit" class="btn btn-warning" (click)="dirDetails(direction.id)">mise a ajour </button>
+          <td>        <button type="submit" class="btn btn-primary" (click)="dirDetails(direction.id)">Update</button>
           </td>
       </tr>
     </tbody>
@@ -37,7 +37,7 @@
           <input type="text" class="form-control" id="description" placeholder="Enter description" name="Description"
             [(ngModel)]="dirdetails.description">
         </div>
-        <button type="submit" class="btn btn-success" >Mettre a jour</button>
+        <button type="submit" class="btn btn-outline-success" >Mettre a jour</button>
   
       </form>
   

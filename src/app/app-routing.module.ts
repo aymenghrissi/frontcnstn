@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,7 @@ import { ListreservationComponent } from './listreservation/listreservation.comp
 import { DemandeComponent } from './demande/demande.component';
 import { ListdemandeComponent } from './listdemande/listdemande.component';
 import { UpdatedirComponent } from './updatedir/updatedir.component';
+import { FormComponent } from './form/form.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: 'adddem', component: DemandeComponent },
   { path: 'listdem', component: ListdemandeComponent },
   { path: 'updir', component: UpdatedirComponent },
+  { path: 'formdg', component: FormComponent },
 ];
 
 @NgModule({

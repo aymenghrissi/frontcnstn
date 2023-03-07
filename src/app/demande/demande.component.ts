@@ -13,7 +13,7 @@ export class DemandeComponent {
   employees:any;
      newdemande:Dem={
       id:0,
-      date_demmande:undefined,
+      date_demmande:new Date(),
       materiel_demmander:'',
       employee:{
        
