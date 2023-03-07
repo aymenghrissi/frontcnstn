@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import * as $ from 'jquery'
+import * as $ from 'jquery';
 import { AppRoutingModule } from './app-routing.module';
+
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
@@ -24,6 +26,10 @@ import { ListdemandeComponent } from './listdemande/listdemande.component';
 import { UpdatedirComponent } from './updatedir/updatedir.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
+import { dataset, formdg } from './model/data';
+import { SearchPipe } from './search.pipe';
+import { FormdscComponent } from './formdsc/formdsc.component';
+import { FormdvpsComponent } from './formdvps/formdvps.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,9 @@ import { FormComponent } from './form/form.component';
     UpdatedirComponent,
     FooterComponent,
     FormComponent,
+    SearchPipe,
+    FormdscComponent,
+    FormdvpsComponent,
     
   ],
   imports: [
@@ -59,4 +68,6 @@ import { FormComponent } from './form/form.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+ 
+}

@@ -1,12 +1,17 @@
 
+
 <div class="panel-group">
     <div class="panel panel-primary">
       <div class="panel-heading"><h4>Formulaires Direction Générale</h4></div>
       <div class="panel-body">
-    <br>
-   
-    <input id="myInput" type="text" placeholder="Search..">
-    <br>
+
+          <div class="form-outline mb-4">
+            <input type="search" class="form-control" id="datatable-search-input" [(ngModel)]="filter">
+            <label class="form-label" for="datatable-search-input">Search</label>
+          </div>
+          <div id="datatable">
+          </div>
+
     
            
     <table class="table table-bordered table-striped">
@@ -16,7 +21,7 @@
           <th>Piéce Jointe</th>
         </tr>
       </thead>
-      <tbody id="myTable" *ngFor="let myfrom of from">
+      <tbody id="myTable" *ngFor="let myfrom of from |search : filter ">
         <tr>
           <td>{{myfrom.name}}</td>
           <td><a href="{{ myfrom.link }}">Télécharger</a></td>

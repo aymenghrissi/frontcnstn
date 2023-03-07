@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { AdministrationComponent } from './administration/administration.component';
@@ -17,6 +18,8 @@ import { DemandeComponent } from './demande/demande.component';
 import { ListdemandeComponent } from './listdemande/listdemande.component';
 import { UpdatedirComponent } from './updatedir/updatedir.component';
 import { FormComponent } from './form/form.component';
+import { FormdscComponent } from './formdsc/formdsc.component';
+import { FormdvpsComponent } from './formdvps/formdvps.component';
 
 
 const routes: Routes = [
@@ -34,12 +37,17 @@ const routes: Routes = [
   { path: 'adddem', component: DemandeComponent },
   { path: 'listdem', component: ListdemandeComponent },
   { path: 'updir', component: UpdatedirComponent },
-  { path: 'formdg', component: FormComponent },
+  { path: 'dg', component: FormComponent },
+  { path: 'dsc', component: FormdscComponent },
+  { path: 'dvps', component: FormdvpsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule ,
+     Ng2SearchPipeModule ,
+     
+     
   ],
   exports: [RouterModule]
 })
