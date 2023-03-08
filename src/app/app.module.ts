@@ -30,6 +30,8 @@ import { dataset, formdg } from './model/data';
 import { SearchPipe } from './search.pipe';
 import { FormdscComponent } from './formdsc/formdsc.component';
 import { FormdvpsComponent } from './formdvps/formdvps.component';
+import { FormdsinComponent } from './formdsin/formdsin.component';
+import { GuideComponent } from './guide/guide.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { FormdvpsComponent } from './formdvps/formdvps.component';
     SearchPipe,
     FormdscComponent,
     FormdvpsComponent,
+    FormdsinComponent,
+    GuideComponent,
     
   ],
   imports: [
