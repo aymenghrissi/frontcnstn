@@ -22,6 +22,7 @@ import { FormdscComponent } from './formdsc/formdsc.component';
 import { FormdvpsComponent } from './formdvps/formdvps.component';
 import { FormdsinComponent } from './formdsin/formdsin.component';
 import { GuideComponent } from './guide/guide.component';
+import { LogicielComponent } from './logiciel/logiciel.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'dvps', component: FormdvpsComponent },
   { path: 'dsin', component: FormdsinComponent },
   { path: 'guide', component: GuideComponent },
+  { path: 'logiciel', component: LogicielComponent },
 ];
 
 @NgModule({

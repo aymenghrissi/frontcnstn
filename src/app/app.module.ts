@@ -32,6 +32,7 @@ import { FormdscComponent } from './formdsc/formdsc.component';
 import { FormdvpsComponent } from './formdvps/formdvps.component';
 import { FormdsinComponent } from './formdsin/formdsin.component';
 import { GuideComponent } from './guide/guide.component';
+import { LogicielComponent } from './logiciel/logiciel.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { GuideComponent } from './guide/guide.component';
     FormdvpsComponent,
     FormdsinComponent,
     GuideComponent,
+    LogicielComponent,
     
   ],
   imports: [

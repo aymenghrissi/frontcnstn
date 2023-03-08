@@ -1,3 +1,4 @@
+<div *ngIf="!condition">
 <table datatable class="table ">
     <thead>
       <tr>
@@ -5,6 +6,7 @@
         <th>Nom</th>
         <th>Nombre du places</th>
         <th>Delete</th>
+        <th>Update</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +15,33 @@
         <td>{{ salle.nom }}</td>
         <td>{{ salle.nombre_place }}</td>
           <td><button type="button" class="btn btn-danger" (click)="deletesalle(salle.id,salle.nom)">Delete</button></td>
+          <td>        <button type="submit" class="btn btn-primary" (click)="salDetails(salle.id)">Update</button>
       </tr>
     </tbody>
   </table>
+</div>
+<div class="card border-info mb-3"  style="max-width: 25rem; margin:auto; margin-top: 20px;" *ngIf="condition">
+  <div class="card-header">Mise a jour</div>
+  <div class="card-body" *ngIf="saldetails">
+    <h5 class="card-title" >Mise a jour</h5>
+
+    <form (ngSubmit)="Update()"  #form="ngForm">
+      <div>
+        <label><b>Nom: </b></label>
+        <input type="text" class="form-control" id="nom" placeholder="Enter description" name="nom"
+          [(ngModel)]="saldetails.nom">
+      </div>
+      <div>
+        <label><b>Description: </b></label>
+        <input type="text" class="form-control" id="description" placeholder="Enter description" name="Description"
+          [(ngModel)]="saldetails.nombre_place">
+      </div>
+      <button type="submit" class="btn btn-outline-success" >Mettre a jour</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+

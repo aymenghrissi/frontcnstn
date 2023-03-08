@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Sal } from '../sal';
 
 @Injectable({
@@ -22,5 +23,16 @@ export class ServiceSalleService {
     return this.httpClient.delete('http://localhost:8082/salle/'+id);
   
   
+  }
+  updatesalle(id:Number , salle : Sal): Observable<Sal>{
+    const url='http://localhost:8082/dir/salles/'
+  
+    return this.httpClient.put<Sal>(url+id, salle);
+  
+  }
+  
+  getsalleById(id: Number){
+    const url='http://localhost:8082/salle/'
+    return this.httpClient.get( url+id);
   }
 }
