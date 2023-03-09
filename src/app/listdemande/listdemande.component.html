@@ -1,3 +1,5 @@
+<div *ngIf="!condition">
+  <br><br>
 <table datatable class="table ">
     <thead>
       <tr>
@@ -6,6 +8,7 @@
         <th>Matériel demander</th>
         <th>Employee</th>
         <th>Delete</th>
+        <th>Update</th>
       
       </tr>
     </thead>
@@ -15,7 +18,31 @@
         <td>{{ demande.date_demmande }}</td>
         <td>{{ demande.materiel_demmander}}</td>
          <td>{{ demande.employee_id}}</td>
-        <td><button type="button" class="btn btn-danger"  (click)="deletedemande(demande.id,demande.nom)">Delete</button></td>
+        <td><button type="button" class="btn btn-outline-danger"  (click)="deletedemande(demande.id,demande.nom)">Delete</button></td>
+        <td><button type="submit" class="btn btn-outline-primary" (click)="demDetails(demande.id)">Update</button></td>
       </tr>
     </tbody>
   </table>
+</div>
+<div class="card border-info mb-3"  style="max-width: 25rem; margin:auto; margin-top: 20px;" *ngIf="condition">
+  <div class="card-header">Mise a jour</div>
+  <div class="card-body" *ngIf="demdetails">
+    <h5 class="card-title" >Mise a jour</h5>
+
+    <form (ngSubmit)="Update()"  #form="ngForm">
+      <div>
+        <label><b>matriel demander: </b></label>
+        <input type="text" class="form-control" id="nom" placeholder="Enter description" name="nom"
+          [(ngModel)]="demdetails.materiel_demmander">
+      </div>
+      <div>
+        <label><b>Date: </b></label>
+        <input type="date" class="form-control" id="description" placeholder="Enter description" name="Description"
+          [(ngModel)]="demdetails.date_demmande">
+      </div>
+      <button type="submit" class="btn btn-outline-success" >Mettre a jour</button>
+
+    </form>
+
+  </div>
+</div>

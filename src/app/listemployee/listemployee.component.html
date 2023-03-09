@@ -1,3 +1,4 @@
+<br><br>
 <table datatable class="table ">
     <thead>
       <tr>
@@ -9,6 +10,8 @@
         <th>Adresse</th>
         <th>Poste</th>
         <th>Matricule</th>
+        <th>email</th>
+        <th>numero interne</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -22,7 +25,9 @@
         <td>{{ employee.adresse }}</td>
         <td>{{ employee.poste}}</td>
         <td>{{ employee.matricule}}</td>
-          <td><button type="button" class="btn btn-danger" (click)="deleteemp(employee.id,employee.nom)">Delete</button></td>
+        <td>{{ employee.email}}</td>
+        <td>{{ employee.tel_interne}}</td>
+          <td><button type="button" class="btn btn-outline-danger" (click)="deleteemp(employee.id,employee.nom)">Delete</button></td>
       </tr>
     </tbody>
   </table>

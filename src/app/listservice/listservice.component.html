@@ -1,4 +1,5 @@
 <div *ngIf="!condition">
+  <br><br>
 <table>
     <thead>
       <tr>
@@ -14,8 +15,8 @@
         <td>{{ service.id }}</td>
         <td>{{ service.nom }}</td>
         <td>{{ service.description }}</td>
-        <td><button type="button" class="btn btn-danger" (click)="deleteServ(service.id,service.nom)">Delete</button></td>
-        <td>        <button type="submit" class="btn btn-primary" (click)="servDetails(service.id)">Update</button>
+        <td><button type="button" class="btn btn-outline-danger" (click)="deleteServ(service.id,service.nom)">Delete</button></td>
+        <td>        <button type="submit" class="btn btn-outline-primary" (click)="servDetails(service.id)">Update</button>
       </tr>
     </tbody>
   </table>

@@ -25,7 +25,7 @@ export class ServiceSalleService {
   
   }
   updatesalle(id:Number , salle : Sal): Observable<Sal>{
-    const url='http://localhost:8082/dir/salles/'
+    const url='http://localhost:8082/salle/salles/'
   
     return this.httpClient.put<Sal>(url+id, salle);
   

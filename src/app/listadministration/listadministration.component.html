@@ -1,5 +1,6 @@
-<div *ngIf="!condition">
-<table datatable class="table ">
+<div  *ngIf="!condition">
+  <br><br>
+<table datatable class="table " >
     <thead>
       <tr>
         <th>ID</th>
@@ -14,13 +15,15 @@
         <td>{{ direction.id }}</td>
         <td>{{ direction.nom }}</td>
         <td>{{ direction.description }}</td>
-          <td><button type="button" class="btn btn-danger" (click)="deleteDir(direction.id,direction.nom)">Delete</button></td>
-          <td>        <button type="submit" class="btn btn-primary" (click)="dirDetails(direction.id)">Update</button>
+          <td><button type="button" class="btn btn-outline-danger" (click)="deleteDir(direction.id,direction.nom)">Delete</button></td>
+          <td>        <button type="submit" class="btn btn-outline-primary" (click)="dirDetails(direction.id)">Update</button>
           </td>
       </tr>
     </tbody>
   </table>
+
 </div>
+
   <div class="card border-info mb-3"  style="max-width: 25rem; margin:auto; margin-top: 20px;" *ngIf="condition">
     <div class="card-header">Mise a jour</div>
     <div class="card-body" *ngIf="dirdetails">

@@ -34,6 +34,18 @@
             <label for="poste">poste:</label>
             <input type="text" class="form-control" id="poste" placeholder="Enter poste" name="poste" [(ngModel)]="newemp.poste" >
         </div>
+        <div class="row">
+        <div class="col">
+          <label for="name">email:</label>
+          <input type="email" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.email" >
+          
+        </div>
+        <div class="col">
+          <label for="description">numero interne:</label>
+          <input type="number" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.tel_interne" >
+        </div>
+      </div><br>
+        
 
           <div class="mb-3">
         <select class="form-select" [(ngModel)]="newemp.service" name="service_id" required >
@@ -47,3 +59,5 @@
       <button type="submit"  class="btn btn-primary">Submit</button>
   </form>
   </div>
+  
+  

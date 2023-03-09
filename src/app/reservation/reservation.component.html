@@ -1,4 +1,4 @@
-<div class="card border-info mb-3" style="max-width: 25rem; margin: auto; margin-top: 20px;">
+<div class="card  mb-3" style="max-width: 25rem; margin: auto; margin-top: 20px;">
     <div class="card-header">Reservation</div>
     <div class="card-body">
         <h5 class="card-title">Reservez votre salle</h5>
@@ -17,8 +17,7 @@
                 </div>
                 <div class="mb-3">
 
-                    <select class="form-select" [(ngModel)]="newres.salle" name="salle_id" required>
-                        <option *ngFor="let Salle of salles" [ngValue]="Salle">
+                    <select class="form-select" [(ngModel)]="newres.salle" name="salle_id" #salle_id required>                        <option *ngFor="let Salle of salles" [ngValue]="Salle">
                             {{Salle.nom}}
                         </option>
                     </select>

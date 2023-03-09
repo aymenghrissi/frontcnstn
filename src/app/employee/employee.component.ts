@@ -21,6 +21,8 @@ export class EmployeeComponent {
     matricule: 0 ,
     adresse:"",
     poste:"",
+    email:"",
+    tel_interne:0,
     service:{id : 0}
 
   };

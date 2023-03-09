@@ -1,3 +1,5 @@
+<div *ngIf="!condition">
+  <br><br>
 <table datatable class="table ">
     <thead>
       <tr>
@@ -5,6 +7,7 @@
         <th>date de debut</th>
         <th>date de fin</th>
         <th>Delete</th>
+        <th>Update</th>
       </tr>
     </thead>
     <tbody>
@@ -14,8 +17,33 @@
         <td>{{ reservation.date_f }}</td>
           
         
-          <td><button type="button" class="btn btn-danger" (click)="deletesalle(reservation.id)">Delete</button></td>
+          <td><button type="button" class="btn btn-outline-danger" (click)="deletesalle(reservation.id)">Delete</button></td>
+          <td>        <button type="submit" class="btn btn-outline-primary" (click)="resDetails(reservation.id)">Update</button>
+          </td>
       </tr>
     </tbody>
   </table>
+</div>
+<div class="card border-info mb-3"  style="max-width: 25rem; margin:auto; margin-top: 20px;" *ngIf="condition">
+  <div class="card-header">Mise a jour</div>
+  <div class="card-body" *ngIf="resdetails">
+    <h5 class="card-title" >Mise a jour</h5>
+
+    <form (ngSubmit)="Update()"  #form="ngForm">
+      <div>
+        <label><b>Date de debut</b></label>
+        <input type="date" class="form-control" id="nom" placeholder="Enter description" name="nom"
+          [(ngModel)]="resdetails.date_d">
+      </div>
+      <div>
+        <label><b>Date de fin</b></label>
+        <input type="date" class="form-control" id="description" placeholder="Enter description" name="Description"
+          [(ngModel)]="resdetails.date_f">
+      </div>
+      <button type="submit" class="btn btn-outline-success" >Mettre a jour</button>
+
+    </form>
+
+  </div>
+</div>
 

@@ -38,6 +38,6 @@ export interface guide {
     {
         "id":7,
         "name":"Guide de sécurité Smartphones et tablettes",
-        "link":"assets/Guides/Guide de sécurité Smartphones et tablettes"
+        "link":"assets/Guides/Guide de sécurité Smartphones et tablettes.pdf"
     },
 ]

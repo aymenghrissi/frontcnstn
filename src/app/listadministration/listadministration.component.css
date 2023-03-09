@@ -4,11 +4,11 @@
 }
 
 tr:hover {
-  background-color: rgb(80, 255, 255);
+  background-color: #dadada;
 }
 
 th {
-  background-color: #1f3d5e;
+  background-color: #F99417;
   color: white;
 }
 
@@ -24,7 +24,7 @@ td {
 .button {
   background-color: #c21111; /* Green */
   border: none;
-  color: rgb(252, 5, 5);
+  color: rgb(172, 172, 172);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;

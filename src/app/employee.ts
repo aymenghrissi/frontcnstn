@@ -8,6 +8,8 @@ export class Employee {
     tel?: Number;
     matricule?: Number;
     adresse?: String;
+    email?: String;
+    tel_interne?: Number;
     poste?:String;
     service?: Serv;
 }

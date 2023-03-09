@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Dem } from '../dem';
 import { Employee } from '../employee';
 import { ServiceDemandeService } from '../services/service-demande.service';
 
@@ -8,6 +9,12 @@ import { ServiceDemandeService } from '../services/service-demande.service';
   styleUrls: ['./listdemande.component.css']
 })
 export class ListdemandeComponent {
+  condition: boolean=false;
+  demdetails: Dem={
+    date_demmande:undefined,
+    materiel_demmander:""
+
+  };
   demandes: any[] = [];
   employee:Employee={
     id:0,
@@ -37,7 +44,25 @@ export class ListdemandeComponent {
     }
    }
 
-
+   demDetails(id: Number){
+    this.condition=true;
+    this.servicedemande.getdemandeById(id).subscribe((data: any) => {
+      console.log(data);
+      this.demdetails=data;
+      
+    });
+  
+  }
+  
+  Update() {
+    if (this.demdetails?.id) { // check if id has a value
+      this.servicedemande.updatedemande(this.demdetails.id, this.demdetails).subscribe(() => {
+        this.condition = false;
+        alert("Votre mise a jour a été effectuée avec succées")
+        this.getdemande();
+      });
+    }
+  }
 
 
 }
