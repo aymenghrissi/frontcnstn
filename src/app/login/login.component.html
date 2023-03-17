@@ -1,0 +1,24 @@
+<div class="container ">
+    <div class="card" style="padding: 50px;">
+        <form  #form="ngForm" (ngSubmit)="login()" >
+            <input type="text"
+            [(ngModel)]="log.userName"
+            name="userName"
+            id="userName"
+            placeholder="Enter your email"
+            class="form-control "
+            >
+
+            <input type="password"
+            [(ngModel)]="log.password"
+            name="userPassword"
+            id="Password"
+            placeholder="Enter your password" 
+            class="form-control "
+             autocomplete="on">
+
+            <input type="submit"
+            class="btn btn-outline-primary  ">
+        </form>
+    </div>
+</div>

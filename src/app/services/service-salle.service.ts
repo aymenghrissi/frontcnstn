@@ -1,14 +1,17 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Sal } from '../sal';
+import { UserAuthService } from './user-auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceSalleService {
   baseUrl = 'http://localhost:8082/salle';
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private auth : UserAuthService) { }
+  token = this.auth.getToken();
+requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
   addsalle( sal : any ) {
     return this.httpClient.post(this.baseUrl ,sal );
   
@@ -16,23 +19,23 @@ export class ServiceSalleService {
 
   getsalle() {
     const url = 'http://localhost:8082/salle/list';
-    return this.httpClient.get(url);
+    return this.httpClient.get(url,{ headers: this.requestHeader});
   }
   deletesalle(id : Number){
     
-    return this.httpClient.delete('http://localhost:8082/salle/'+id);
+    return this.httpClient.delete('http://localhost:8082/salle/'+id,{ headers: this.requestHeader});
   
   
   }
   updatesalle(id:Number , salle : Sal): Observable<Sal>{
     const url='http://localhost:8082/salle/salles/'
   
-    return this.httpClient.put<Sal>(url+id, salle);
+    return this.httpClient.put<Sal>(url+id, salle,{ headers: this.requestHeader});
   
   }
   
   getsalleById(id: Number){
     const url='http://localhost:8082/salle/'
-    return this.httpClient.get( url+id);
+    return this.httpClient.get( url+id,{ headers: this.requestHeader});
   }
 }

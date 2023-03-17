@@ -1,5 +1,9 @@
 import { Serv } from "./serv";
+export class appRole {
+ id?:Number;
+ roleName?:String;
 
+}
 export class Employee {
     id?: Number ;
     nom?: String ;
@@ -12,4 +16,5 @@ export class Employee {
     tel_interne?: Number;
     poste?:String;
     service?: Serv;
+    role?:appRole;
 }

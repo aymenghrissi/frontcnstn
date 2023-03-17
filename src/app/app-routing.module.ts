@@ -23,12 +23,15 @@ import { FormdvpsComponent } from './formdvps/formdvps.component';
 import { FormdsinComponent } from './formdsin/formdsin.component';
 import { GuideComponent } from './guide/guide.component';
 import { LogicielComponent } from './logiciel/logiciel.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth/auth.guard';
+
 
 
 const routes: Routes = [
   { path: 'acceuil-component', component: AcceuilComponent },
-  { path: 'addcat', component: AdministrationComponent },
-  { path: 'listcat', component: ListadministrationComponent },
+  { path: 'addcat', component: AdministrationComponent ,canActivate:[AuthGuard] },
+  { path: 'listcat', component: ListadministrationComponent, canActivate:[AuthGuard]  },
   { path: 'addserv', component: ServiceComponent },
   { path: 'listserv', component: ListserviceComponent },
   { path: 'addemp', component: EmployeeComponent },
@@ -46,6 +49,7 @@ const routes: Routes = [
   { path: 'dsin', component: FormdsinComponent },
   { path: 'guide', component: GuideComponent },
   { path: 'logiciel', component: LogicielComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

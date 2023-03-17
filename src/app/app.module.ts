@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { AdministrationComponent } from './administration/administration.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServicemanagementService } from './services/servicemanagement.service';
 import { Management } from './management';
 import { ListadministrationComponent } from './listadministration/listadministration.component';
@@ -33,6 +33,12 @@ import { FormdvpsComponent } from './formdvps/formdvps.component';
 import { FormdsinComponent } from './formdsin/formdsin.component';
 import { GuideComponent } from './guide/guide.component';
 import { LogicielComponent } from './logiciel/logiciel.component';
+
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { ServiceemployeeService } from './services/serviceemployee.service';
 
 @NgModule({
   declarations: [
@@ -60,6 +66,9 @@ import { LogicielComponent } from './logiciel/logiciel.component';
     FormdsinComponent,
     GuideComponent,
     LogicielComponent,
+    LoginComponent,
+    ForbiddenComponent,
+    
     
   ],
   imports: [
@@ -70,7 +79,14 @@ import { LogicielComponent } from './logiciel/logiciel.component';
   ],
   providers: [
     ServicemanagementService,
-    Management
+    Management,
+    AuthGuard, 
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi : true
+    },
+    ServiceemployeeService
   ],
   bootstrap: [AppComponent]
 })
