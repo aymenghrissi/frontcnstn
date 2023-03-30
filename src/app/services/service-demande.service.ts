@@ -12,7 +12,7 @@ export class ServiceDemandeService {
   baseUrl = 'http://localhost:8082/demande';
   constructor(private httpClient: HttpClient, private auth : UserAuthService) {}
   token = this.auth.getToken();
-  requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
+  requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+ this.token });
   
   adddemande( demande : any ) {
     return this.httpClient.post(this.baseUrl ,demande,{ headers: this.requestHeader});
