@@ -4,7 +4,7 @@ import { ServiceservService } from '../services/serviceserv.service';
 
 @Component({
   selector: 'app-listservice',
-  templateUrl : './Listservice.component.html',
+  templateUrl : './listservice.component.html',
   styleUrls: ['./listservice.component.css']
 })
 export class ListserviceComponent {
