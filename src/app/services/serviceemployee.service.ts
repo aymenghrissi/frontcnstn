@@ -7,13 +7,13 @@ import { UserAuthService } from './user-auth.service';
 })
 export class ServiceemployeeService {
   baseUrl = 'http://localhost:8082/employee';
-  constructor(private httpClient: HttpClient ,private authservice : UserAuthService) { }
+  constructor(private httpClient: HttpClient ,private auth : UserAuthService) { }
+  token = this.auth.getToken();
+  requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
   addEmployee( employee : any ) {
     return this.httpClient.post(this.baseUrl ,employee,{ headers: this.requestHeader} );
   
   }
-  token = this.authservice.getToken();
-  requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
 
   getEmployee() {
     const url = 'http://localhost:8082/employee/list';
@@ -25,10 +25,11 @@ export class ServiceemployeeService {
   
   
   }
-  public isMatch(str: string ): boolean {
-    const roles = this.authservice.getRoles();
-    return roles.includes(str);
-  }
+ public isMatch(str: string ): boolean {
+  const roles = this.auth.getRoles();
+  return roles && roles.includes(str);
+}
+
   
   
   

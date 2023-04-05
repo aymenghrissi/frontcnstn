@@ -11,9 +11,9 @@ export class ServiceSalleService {
   baseUrl = 'http://localhost:8082/salle';
   constructor(private httpClient: HttpClient, private auth : UserAuthService) { }
   token = this.auth.getToken();
-requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
+  requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
   addsalle( sal : any ) {
-    return this.httpClient.post(this.baseUrl ,sal );
+    return this.httpClient.post(this.baseUrl ,sal,{ headers: this.requestHeader});
   
   }
 

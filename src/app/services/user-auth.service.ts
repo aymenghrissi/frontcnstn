@@ -30,6 +30,23 @@ export class UserAuthService {
 
   }
   }
+  public getUser(): any {
+    try {
+      const user = JSON.parse(localStorage.getItem("user") || "{}");
+      return user;
+    } catch (e) {
+      console.error("Error parsing user from localStorage:", e);
+      return {};
+    }
+  }
+
+  public setUser(user: any) {
+    try {
+      localStorage.setItem("user", JSON.stringify(user));
+    } catch (e) {
+      console.error("Error setting user in localStorage:", e);
+    }
+  }
 
   public setToken(jwtToken: string) {
     localStorage.setItem("jwtToken", jwtToken);

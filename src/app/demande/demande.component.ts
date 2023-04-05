@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Dem } from '../dem';
 import { ServiceDemandeService } from '../services/service-demande.service';
 import { ServiceemployeeService } from '../services/serviceemployee.service';
+import { UserAuthService } from '../services/user-auth.service';
 
 @Component({
   selector: 'app-demande',
@@ -19,7 +20,7 @@ export class DemandeComponent {
        
         }	
      } 
-   constructor(private servicedemande: ServiceDemandeService, private empserv: ServiceemployeeService, private router:Router) { }
+   constructor(private servicedemande: ServiceDemandeService, private empserv: ServiceemployeeService, private router:Router,public auth : UserAuthService) { }
  
    ngOnInit() {
      this.empserv.getEmployee().subscribe((data: any) => {
@@ -30,6 +31,7 @@ export class DemandeComponent {
    }
    
      adddemande(){
+      this.newdemande.employee = this.auth.getUser().role;
      this.servicedemande.adddemande (this.newdemande).subscribe(()=>{
        alert('Damande ajouter ');
        

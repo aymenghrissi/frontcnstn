@@ -17,4 +17,5 @@ export class Employee {
     poste?:String;
     service?: Serv;
     role?:appRole;
+    password?:String;
 }

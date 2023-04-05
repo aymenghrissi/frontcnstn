@@ -4,6 +4,7 @@ import { Reserv } from '../reserv';
 import { ServiceSalleService } from '../services/service-salle.service';
 import { ServiceemployeeService } from '../services/serviceemployee.service';
 import { ServicereservationService } from '../services/servicereservation.service';
+import { UserAuthService } from '../services/user-auth.service';
 
 @Component({
   selector: 'app-reservation',
@@ -23,7 +24,7 @@ export class ReservationComponent {
 
     
   };
-  constructor(private Serviceres: ServicereservationService, private servicesalle: ServiceSalleService, private servicemp: ServiceemployeeService, private router: Router) { }
+  constructor(private Serviceres: ServicereservationService, private servicesalle: ServiceSalleService, private servicemp: ServiceemployeeService, private router: Router ,private auth : UserAuthService) { }
   ngOnInit() {
     this.servicesalle.getsalle().subscribe((data: any) => {
       this.salles = data;
@@ -39,6 +40,7 @@ export class ReservationComponent {
   
   
 addreserv(){
+  this.newres.employee =  this.auth.getUser().role;
   this.Serviceres.addreserv(this.newres).subscribe(() => {
     console.log(this.newres)
     alert('Form submitted successfully');

@@ -22,6 +22,7 @@ export class EmployeeComponent {
     adresse:"",
     poste:"",
     email:"",
+    password:"",
     tel_interne:0,
     service:{id : 0}
 
