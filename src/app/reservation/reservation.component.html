@@ -6,34 +6,25 @@
             <form (ngSubmit)="addreserv()" #form="ngForm">
                 <div class="mb-3 mt-3">
                     <label for="name">date de debut:</label>
-                    <input type="date" class="form-control" id="name" placeholder="Entrer la date de debut" name="Name"
-                        [(ngModel)]="newres.date_d">
+                    <input type="date" class="form-control" id="dated" placeholder="Entrer la date de debut" name="date_debut"
+                        [(ngModel)]="newres.date_d" required>
 
                 </div>
                 <div class="mb-3">
-                    <label for="description">date de fin:</label>
-                    <input type="date" class="form-control" id="description" placeholder="Entrer la date fin"
-                        name="Description" [(ngModel)]="newres.date_f">
+                    <label for="name">date de fin:</label>
+                    <input type="date" class="form-control" id="datef" placeholder="Entrer la date fin"
+                        name="date_fin" [(ngModel)]="newres.date_f" required>
                 </div>
                 <div class="mb-3">
-
-                    <select class="form-select" [(ngModel)]="newres.salle" name="salle_id" #salle_id required>                        <option *ngFor="let Salle of salles" [ngValue]="Salle">
+                    <label for="name">Salle</label>
+                    <select class="form-select" [(ngModel)]="newres.salle" required id="salle" name="Salle" #salle_id >                        <option *ngFor="let Salle of salles" [ngValue]="Salle" >
                             {{Salle.nom}}
                         </option>
                     </select>
 
                 </div>
-                <!--div class="mb-3">
 
-                    <select class="form-select" [(ngModel)]="newres.employee" name="employee_id" required>
-                        <option *ngFor="let employee of employees" [ngValue]="employee">
-                            {{employee.nom}} {{employee.prenom}}
-                        </option>
-                    </select>
-
-                </div-->
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"[disabled]="!form.valid">Submit</button>
             </form>
         </div>
 

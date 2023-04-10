@@ -10,19 +10,14 @@
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Matériel demander</label>
                     <textarea class="form-control"  id="name" placeholder="Matériels demander" name="Name"
-                    [(ngModel)]="newdemande.materiel_demmander"></textarea>
+                    [(ngModel)]="newdemande.materiel_demmander" required></textarea>
                   </div>
              
                 <div class="mb-3">
-                    <!--select class="form-select" [(ngModel)]="newdemande.employee" name="employee_id" required>
-                        <option *ngFor="let employee of employees" [ngValue]="employee">
-                            {{employee.nom}} {{employee.prenom}}
-                        </option>
-                    </select-->
 
                 </div>
 
-                <button type="submit" class="btn btn-primary">Demander</button>
+                <button type="submit" class="btn btn-primary"[disabled]="!form.valid">Demander</button>
             </form>
         </div>
 

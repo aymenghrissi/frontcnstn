@@ -1,4 +1,4 @@
-<div class="container mt-3">
+ <div class="container mt-3">
     <h2>Register</h2>
     <form  (ngSubmit)="addemp()" #form="ngForm">
       <div class="row">
@@ -37,17 +37,18 @@
         <div class="row">
         <div class="col">
           <label for="name">email:</label>
-          <input type="email" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.email" required>
+          <td><input type="email" class="form-control" id="email"placeholder="Enter email" name="email"  [(ngModel)]="newemp.email" required>
           
         </div>
         <div class="col">
           <label for="description">numero interne:</label>
-          <input type="number" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.tel_interne" required >
+          <input type="number" class="form-control" id="numinterne" placeholder="Enter votre numero interne"name="numint" [(ngModel)]="newemp.tel_interne" required >
         </div>
       </div><br>
         
 
           <div class="mb-3">
+            <label for="description">service:</label>
         <select class="form-select" [(ngModel)]="newemp.service" name="service_id" required >
           <option *ngFor="let service of services" [ngValue]="service">
             {{service.nom}}
@@ -57,11 +58,93 @@
       </div>
       <div class="mb-3">
         <label for="matricule">mot de passe :</label>
-        <input type="password" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.password" required>
+        <input type="password" class="form-control" id="mdp" placeholder="Enter mot de passe" name="motdepasse" [(ngModel)]="newemp.password" required>
     </div>
     
-      <button type="submit"  class="btn btn-primary">Submit</button>
+      <button type="submit"  class="btn btn-primary" [disabled]="!form.valid">Submit</button>
   </form>
+  </div>  
+    <!-- <form  (ngSubmit)="addemp()" #form="ngForm">
+  <div class="container mt-3">
+    <h2>Inscription</h2>
+    <p>Vous pouvez entrer les informations necessaires pour s'inscrire</p>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th>Titre</th>
+          <th>Valeur</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>nom</td>
+          <td><input type="text" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.nom" required ></td>
+        
+        </tr>
+        <tr>
+          <td>prenom</td>
+          <td><input type="text" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.prenom" required>
+          </td>
+     
+        </tr>
+        <tr>
+          <td>cin</td>
+          <td><input type="number" class="form-control" id="cin" placeholder="Enter cin" name="cin" [(ngModel)]="newemp.cin"required >
+          </td>
+        
+        </tr>
+        <tr>
+          <td>numero telephone</td>
+          <td><input type="number" class="form-control" id="tel" placeholder="nombre de telephone" name="tel" [(ngModel)]="newemp.tel" required></td>
+        
+        </tr>
+        <tr>
+          <td>matricule</td>
+          <td><input type="number" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.matricule" required >
+          </td>
+     
+        </tr>
+        <tr>
+          <td>adresse</td>
+          <td><input type="text" class="form-control" id="adresse" placeholder="Enter adresse" name="adresse" [(ngModel)]="newemp.adresse" required>
+          </td>
+        
+        </tr>
+        <tr>
+          <td>poste</td>
+          <td><input type="text" class="form-control" id="poste" placeholder="Enter poste" name="poste" [(ngModel)]="newemp.poste" required>
+          </td>
+        
+        </tr>
+        <tr>
+          <td>email</td>
+          <td><input type="email" class="form-control" id="email"placeholder="Enter email" name="email"  [(ngModel)]="newemp.email" required>
+          </td>
+     
+        </tr>
+        <tr>
+          <td>numero interne</td>
+          <td><input type="number" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.tel_interne" required >
+          </td>
+        
+        </tr>
+        <tr>
+          <td>service</td>
+          <td><select class="form-select" [(ngModel)]="newemp.service" name="service_id" required >
+            <option *ngFor="let service of services" [ngValue]="service">
+              {{service.nom}}
+            </option>
+          </select></td>
+        
+        </tr>
+        <tr>
+          <td>mot de passe </td>
+          <td><input type="password" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.password" required>
+          </td>
+        
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit"  class="btn btn-primary" [disabled]="!form.valid">Submit</button>
   </div>
-  
-  
+</form>  -->

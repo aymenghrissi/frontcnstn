@@ -3,14 +3,14 @@
     <form (ngSubmit)="addsalle()" #form="ngForm">
       <div class="mb-3 mt-3">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name"placeholder="Entrer le nom du salle" name="Name" [(ngModel)]="newsal.nom" >
+        <input type="text" class="form-control" id="name"placeholder="Entrer le nom du salle" name="Name" [(ngModel)]="newsal.nom" required>
         
       </div>
       <div class="mb-3">
-        <label for="description">nombre de place</label>
-        <input type="number" class="form-control" id="description"  placeholder="Entrer le nombre de place du salle"name="Description" [(ngModel)]="newsal.nombre_place" >
+        <label for="name">nombre de place</label>
+        <input type="number" class="form-control" id="nbplace"  placeholder="Entrer le nombre de place du salle"name="nombre_place" [(ngModel)]="newsal.nombre_place" required>
       </div>
     
-      <button type="submit"  class="btn btn-primary">Submit</button>
+      <button type="submit"  class="btn btn-primary" [disabled]="!form.valid">Submit</button>
     </form>
   </div>

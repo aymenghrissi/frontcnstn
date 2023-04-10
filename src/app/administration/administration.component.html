@@ -3,15 +3,15 @@
   <form (ngSubmit)="addDirection()" #form="ngForm">
     <div class="mb-3 mt-3">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name"placeholder="Enter name" name="Name" [(ngModel)]="management.nom" >
+      <input type="text" class="form-control" id="name"placeholder="Enter name" name="Name" [(ngModel)]="management.nom" required >
       
     </div>
     <div class="mb-3">
       <label for="description">description</label>
-      <input type="text" class="form-control" id="description" placeholder="Enter description"name="Description" [(ngModel)]="management.description" >
+      <input type="text" class="form-control" id="description" placeholder="Enter description"name="Description" [(ngModel)]="management.description" required>
     </div>
   
-    <button type="submit"  class="btn btn-primary">Submit</button>
+    <button type="submit"  class="btn btn-primary" [disabled]="!form.valid" >Submit</button>
   </form>
 </div>
 
