@@ -1,15 +1,15 @@
 <div class="container mt-3">
-    <h2>Employee</h2>
+    <h2>Register</h2>
     <form  (ngSubmit)="addemp()" #form="ngForm">
       <div class="row">
       <div class="col">
         <label for="name">nom:</label>
-        <input type="text" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.nom" >
+        <input type="text" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.nom" required >
         
       </div>
       <div class="col">
         <label for="description">prenom:</label>
-        <input type="text" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.prenom" >
+        <input type="text" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.prenom" required>
       </div>
       </div>
       <div class="row">
@@ -24,7 +24,7 @@
       </div>
         <div class="mb-3">
             <label for="matricule">matricule:</label>
-            <input type="number" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.matricule" >
+            <input type="number" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.matricule" required >
         </div>
         <div class="mb-3">
             <label for="adresse">adresse:</label>
@@ -32,17 +32,17 @@
         </div>
         <div class="mb-3">
             <label for="poste">poste:</label>
-            <input type="text" class="form-control" id="poste" placeholder="Enter poste" name="poste" [(ngModel)]="newemp.poste" >
+            <input type="text" class="form-control" id="poste" placeholder="Enter poste" name="poste" [(ngModel)]="newemp.poste" required>
         </div>
         <div class="row">
         <div class="col">
           <label for="name">email:</label>
-          <input type="email" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.email" >
+          <input type="email" class="form-control" id="name"placeholder="Enter name" name="Name"  [(ngModel)]="newemp.email" required>
           
         </div>
         <div class="col">
           <label for="description">numero interne:</label>
-          <input type="number" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.tel_interne" >
+          <input type="number" class="form-control" id="prenom" placeholder="Enter prenom"name="Description" [(ngModel)]="newemp.tel_interne" required >
         </div>
       </div><br>
         
@@ -57,7 +57,7 @@
       </div>
       <div class="mb-3">
         <label for="matricule">mot de passe :</label>
-        <input type="password" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.password" >
+        <input type="password" class="form-control" id="matricule" placeholder="Enter matricule" name="matricule" [(ngModel)]="newemp.password" required>
     </div>
     
       <button type="submit"  class="btn btn-primary">Submit</button>

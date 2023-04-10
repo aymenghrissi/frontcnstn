@@ -10,7 +10,7 @@ import { UserAuthService } from '../services/user-auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private loge :LogService ,private userauthservice : UserAuthService ,private router: Router){}
+  constructor(private loge :LogService ,private userauthservice : UserAuthService ,public router: Router){}
   log : Logreq ={
     userName : "",
     password : "" 

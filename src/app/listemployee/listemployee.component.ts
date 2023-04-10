@@ -9,7 +9,25 @@ import { ServiceemployeeService } from '../services/serviceemployee.service';
 })
 export class ListemployeeComponent {
   employees: any[] = [];
+  condition: boolean=false;
+  demandes: any[] = [];
+  employee:Employee={
+    id:0,
+    nom:'',
+    prenom:'',
+    cin:0,
+    tel:0,
+    adresse:'',
+    poste:'',
+    matricule:0,
+    email:'',
+    tel_interne:0,
+    role:'',
+  }
   constructor(private servicemp: ServiceemployeeService) {
+    servicemp.getEmployee().subscribe((data: any) => {
+      this.demandes = data;
+    });
     this.getemployee();
   }
 
@@ -25,5 +43,24 @@ emp : any = this.employees ;
       this.getemployee();
     });
   }
+  }
+  empDetails(id: Number){
+    this.condition=true;
+    this.servicemp.getemployeeById(id).subscribe((data: any) => {
+      console.log(data);
+      this.employee=data;
+      
+    });
+  
+  }
+  
+  Update() {
+    if (this.employee?.id) { // check if id has a value
+      this.servicemp.updateemployee(this.employee.id, this.employee).subscribe(() => {
+        this.condition = false;
+        alert("Votre mise a jour a été effectuée avec succées")
+        this.getemployee();
+      });
+    }
   }
 }

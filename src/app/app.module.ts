@@ -39,6 +39,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ServiceemployeeService } from './services/serviceemployee.service';
+import { LogsComponent } from './logs/logs.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { ServiceemployeeService } from './services/serviceemployee.service';
     LogicielComponent,
     LoginComponent,
     ForbiddenComponent,
+    LogsComponent,
     
     
   ],

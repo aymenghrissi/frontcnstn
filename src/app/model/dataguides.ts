@@ -30,14 +30,34 @@ export interface guide {
         "name":"Guide de bonnes pratiques pour éviter les Ransomwares",
         "link":"assets/Guides/Guide de bonnes pratiques pour éviter les Ransomwares.pdf"
     },
-    {
-        "id":6,
-        "name":"DISPLAY NAME IMPERSONATION",
-        "link":"assets/Guides/display name impersonation.pdf"
-    },
-    {
-        "id":7,
-        "name":"Guide de sécurité Smartphones et tablettes",
-        "link":"assets/Guides/Guide de sécurité Smartphones et tablettes.pdf"
-    },
+  //  {
+        //"id":6,
+        //"name":"DISPLAY NAME IMPERSONATION",
+      //  "link":"assets/Guides/display name impersonation.pdf"
+    //},
+   // {
+        //"id":7,
+       // "name":"Guide de sécurité Smartphones et tablettes",
+     //   "link":"assets/Guides/Guide de sécurité Smartphones et tablettes.pdf"
+   // },
+   {
+    "id":6,
+    "name":"Guide de configuration outlook",
+    "link":"assets/Guides/guide_outlook.pdf"
+},
+{
+    "id":7,
+    "name":"Guide de configuration Thunderbird",
+    "link":"assets/Guides/guide_thunderbird.pdf"
+},
+{
+    "id":8,
+    "name":"Guide d'utilisation du Webmail RNU",
+    "link":"assets/Guides/guide_webmail.pdf"
+},
+{
+    "id":9,
+    "name":"Guide de configuration Mobile",
+    "link":"assets/Guides/guide_mobile.pdf"
+},
 ]

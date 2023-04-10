@@ -1,3 +1,4 @@
+<div *ngIf="!condition">
 <br><br>
 <table datatable class="table ">
     <thead>
@@ -12,7 +13,9 @@
         <th>Matricule</th>
         <th>email</th>
         <th>numero interne</th>
+        <th>Role</th>
         <th>Delete</th>
+        <th>Update</th>
       </tr>
     </thead>
     <tbody>
@@ -27,7 +30,72 @@
         <td>{{ employee.matricule}}</td>
         <td>{{ employee.email}}</td>
         <td>{{ employee.tel_interne}}</td>
+        <td>{{ employee.role}}</td>
           <td><button type="button" class="btn btn-outline-danger" (click)="deleteemp(employee.id,employee.nom)">Delete</button></td>
+          <td><button type="submit" class="btn btn-outline-primary" (click)="empDetails(employee.id)">Update</button></td>
       </tr>
     </tbody>
   </table>
+</div>
+  <div class="card border-info mb-3"  style="max-width: 25rem; margin:auto; margin-top: 20px;" *ngIf="condition">
+    <div class="card-header">Mise a jour</div>
+    <div class="card-body" *ngIf="empDetails">
+      <h5 class="card-title" >Mise a jour</h5>
+  
+      <form (ngSubmit)="Update()"  #form="ngForm">
+        <div>
+          <label><b>nom: </b></label>
+          <input type="text" class="form-control" id="nom" placeholder="Enter le nom" name="nom"
+            [(ngModel)]="employee.nom">
+        </div>
+        <div>
+          <label><b>prenom: </b></label>
+          <input type="text" class="form-control" id="prenom" placeholder="Enter le prenom" name="Description"
+            [(ngModel)]="employee.prenom">
+        </div>
+        <div>
+          <label><b>cin: </b></label>
+          <input type="number" class="form-control" id="cin" placeholder="Enter le cin" name="Description"
+            [(ngModel)]="employee.cin">
+        </div>
+        <div>
+          <label><b>numero telephone: </b></label>
+          <input type="number" class="form-control" id="tel" placeholder="Enter numero" name="Description"
+            [(ngModel)]="employee.tel">
+        </div>
+        <div>
+          <label><b>adresse: </b></label>
+          <input type="text" class="form-control" id="adresse" placeholder="Enter l'adresse" name="Description"
+            [(ngModel)]="employee.adresse">
+        </div>
+        <div>
+          <label><b>Poste:</b></label>
+          <input type="text" class="form-control" id="poste" placeholder="Enter votre poste" name="Description"
+            [(ngModel)]="employee.poste">
+        </div>
+        <div>
+          <label><b>Matricule: </b></label>
+          <input type="number" class="form-control" id="matricule" placeholder="Enter matricule" name="Description"
+            [(ngModel)]="employee.matricule">
+        </div>
+        <div>
+          <label><b>EMAIL: </b></label>
+          <input type="text" class="form-control" id="email" placeholder="Enter l'email" name="Description"
+            [(ngModel)]="employee.email">
+        </div>
+        <div>
+          <label><b>numero interne: </b></label>
+          <input type="number" class="form-control" id="interne" placeholder="Enter numero interne" name="Description"
+            [(ngModel)]="employee.tel_interne">
+        </div>
+        <div>
+          <label><b>role: </b></label>
+          <input type="text" class="form-control" id="role" placeholder="Enter description" name="Description"
+            [(ngModel)]="employee.role">
+        </div>
+        <button type="submit" class="btn btn-outline-success" >Mettre a jour</button>
+  
+      </form>
+  
+    </div>
+

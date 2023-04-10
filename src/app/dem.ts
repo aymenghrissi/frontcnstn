@@ -5,4 +5,5 @@ export class Dem {
     date_demmande?:Date;
     materiel_demmander?:String;
     employee?:Employee;	
+    employee_id?:Number;
 }

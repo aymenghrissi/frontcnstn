@@ -21,7 +21,7 @@ addservice( Serv : any ) {
 
 getServices() {
   const url = 'http://localhost:8082/service/list';
-  return this.httpClient.get(url,{ headers: this.requestHeader});
+  return this.httpClient.get(url);
 }
 deleteserv(id : Number){
   

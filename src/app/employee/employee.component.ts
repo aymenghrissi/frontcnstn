@@ -24,7 +24,8 @@ export class EmployeeComponent {
     email:"",
     password:"",
     tel_interne:0,
-    service:{id : 0}
+    service:{id : 0},
+    role:"user"
 
   };
   ngOnInit() {
@@ -36,10 +37,9 @@ export class EmployeeComponent {
   }
  addemp(){
       this.employee.addEmployee(this.newemp).subscribe(() => {
-        //console.log(this.newserv)
         alert('Form submitted successfully');
-        this.router.navigateByUrl('/listemp');
-       // this.router.navigateByUrl('/listserv');
+        //this.router.navigateByUrl('/listemp');
+       
       console}, 
       (error) => {
         console.error('Error submitting form', error);

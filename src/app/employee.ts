@@ -16,6 +16,6 @@ export class Employee {
     tel_interne?: Number;
     poste?:String;
     service?: Serv;
-    role?:appRole;
+    role?:String;
     password?:String;
 }

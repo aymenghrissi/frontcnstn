@@ -12,7 +12,10 @@ export class ListdemandeComponent {
   condition: boolean=false;
   demdetails: Dem={
     date_demmande:undefined,
-    materiel_demmander:""
+    materiel_demmander:"",
+    employee:{
+      id:0
+    }
 
   };
   demandes: any[] = [];

@@ -25,6 +25,7 @@ import { GuideComponent } from './guide/guide.component';
 import { LogicielComponent } from './logiciel/logiciel.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { LogsComponent } from './logs/logs.component';
 
 
 
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'guide', component: GuideComponent },
   { path: 'logiciel', component: LogicielComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logs', component: LogsComponent },
 ];
 
 @NgModule({

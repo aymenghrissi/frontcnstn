@@ -1,4 +1,4 @@
-<div class="container ">
+<!--div class="container ">
     <div class="card" style="padding: 50px;">
         <form  #form="ngForm" (ngSubmit)="login()" >
             <input type="text"
@@ -21,4 +21,60 @@
             class="btn btn-outline-primary  ">
         </form>
     </div>
+</div-->
+<!--div style="text-align:right; padding-top: 40px; padding-right: 380px;"> <a routerLink="/addemp" >Register</a></div-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+            <div class="col-lg-12 login-key">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                
+            </div>
+            <div class="col-lg-12 login-title">
+                LOGIN
+            </div>
+
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">
+                    <form  #form="ngForm" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <label class="form-control-label">EMAIL</label>
+                            <input type="text" class="form-control"  [(ngModel)]="log.userName"
+                            name="userName"
+                            id="userName">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">MOT DE 
+                                 PASSE
+                            </label>
+                            <input  class="form-control" type="password"
+                            [(ngModel)]="log.password"
+                            name="userPassword"
+                            id="Password">
+                        </div>
+
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text">
+                                
+                            </div>
+                            <div class="col-lg-6 login-btm login-button">
+                                <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                            </div>
+                            <div class="col-lg-6 login-btm login-button" style="text-align:left; " >
+                            <button routerLink="/addemp" type="button" class="btn btn-outline-primary">REGISTER</button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2"></div>
+        </div>
+    </div>
+
+
+
+
+
+
 </div>
