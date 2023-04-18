@@ -6,4 +6,5 @@ export class Dem {
     materiel_demmander?:String;
     employee?:Employee;	
     employee_id?:Number;
+    emp?:String;
 }

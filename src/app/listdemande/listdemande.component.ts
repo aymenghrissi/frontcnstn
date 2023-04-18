@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Dem } from '../dem';
 import { Employee } from '../employee';
 import { ServiceDemandeService } from '../services/service-demande.service';
+import { ServiceemployeeService } from '../services/serviceemployee.service';
 
 @Component({
   selector: 'app-listdemande',
@@ -13,28 +14,37 @@ export class ListdemandeComponent {
   demdetails: Dem={
     date_demmande:undefined,
     materiel_demmander:"",
+    emp:"",
     employee:{
       id:0
     }
 
   };
   demandes: any[] = [];
+  employees: any[] = [];
   employee:Employee={
     id:0,
     nom:'',
-    prenom:''
+    prenom:'',
+    demande:{}
   }
-  constructor(private servicedemande : ServiceDemandeService){
+  constructor(private servicedemande : ServiceDemandeService , private emp : ServiceemployeeService){
+
     servicedemande.getdemande().subscribe((data: any) => {
       this.demandes = data;
+      console.log(data);
     });
-    
+    emp.getEmployee().subscribe((data: any) => {
+      this.employee = data;
+      console.log(data);
+    });
   }
+  
   getdemande() {
     this.servicedemande.getdemande().subscribe((data: any) => {
-      console.log(this.demandes);
+      console.log(data);
       this.demandes= data;
-      console.log(this.demandes);
+      
     });
   }
 
@@ -58,7 +68,7 @@ export class ListdemandeComponent {
   }
   
   Update() {
-    if (this.demdetails?.id) { // check if id has a value
+    if (this.demdetails?.id) {
       this.servicedemande.updatedemande(this.demdetails.id, this.demdetails).subscribe(() => {
         this.condition = false;
         alert("Votre mise a jour a été effectuée avec succées")
@@ -66,6 +76,4 @@ export class ListdemandeComponent {
       });
     }
   }
-
-
 }

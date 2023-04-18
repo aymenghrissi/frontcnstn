@@ -1,3 +1,4 @@
+import { Dem } from "./dem";
 import { Serv } from "./serv";
 export class appRole {
  id?:Number;
@@ -18,4 +19,5 @@ export class Employee {
     service?: Serv;
     role?:String;
     password?:String;
+    demande?:Dem;
 }

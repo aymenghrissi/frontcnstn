@@ -14,6 +14,8 @@ import { UserAuthService } from '../services/user-auth.service';
 export class ReservationComponent {
   salles: any;
   employees: any;
+  reservations: any;
+  selectedSalle: string = "";
 
   newres : Reserv = {
     
@@ -35,12 +37,19 @@ export class ReservationComponent {
         console.log(this.employees);
       
     });
+    this.Serviceres.getreserv().subscribe((data: any) => {
+      this.reservations = data;
+      console.log(this.reservations);
+      console.log(this.selectedSalle);
+    });
   
   }
   
   
 addreserv(){
   this.newres.employee =  this.auth.getUser().role;
+  this.newres.sal = this.newres.salle?.nom ;
+  this.newres.emp = this.auth.getUser().role.nom +" "+ this.auth.getUser().role.prenom
   this.Serviceres.addreserv(this.newres).subscribe(() => {
     console.log(this.newres)
     alert('Form submitted successfully');

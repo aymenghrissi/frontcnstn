@@ -17,7 +17,7 @@
         <td>{{ demande.id }}</td>
         <td>{{ demande.date_demmande }}</td>
         <td>{{ demande.materiel_demmander}}</td>
-         <td>{{ demande.employee}}</td>
+        <td > {{demande.emp}} </td>
         <td><button type="button" class="btn btn-outline-danger"  (click)="deletedemande(demande.id,demande.nom)">Delete</button></td>
         <td><button type="submit" class="btn btn-outline-primary" (click)="demDetails(demande.id)">Update</button></td>
       </tr>

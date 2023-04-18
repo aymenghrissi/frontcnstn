@@ -17,8 +17,9 @@
                 </div>
                 <div class="mb-3">
                     <label for="name">Salle</label>
-                    <select class="form-select" [(ngModel)]="newres.salle" required id="salle" name="Salle" #salle_id >                        <option *ngFor="let Salle of salles" [ngValue]="Salle" >
+                    <select class="form-select" [(ngModel)]="newres.salle" required id="salle" name="Salle" #salleSelect >                        <option *ngFor="let Salle of salles" [ngValue]="Salle" >
                             {{Salle.nom}}
+                           
                         </option>
                     </select>
 

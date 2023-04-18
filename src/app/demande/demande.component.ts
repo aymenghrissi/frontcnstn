@@ -16,6 +16,7 @@ export class DemandeComponent {
       id:0,
       date_demmande:new Date(),
       materiel_demmander:'',
+      emp:'',
       employee:{
        
         }	
@@ -25,13 +26,14 @@ export class DemandeComponent {
    ngOnInit() {
      this.empserv.getEmployee().subscribe((data: any) => {
        this.employees= data;
-       console.log(this.employees);
+       //console.log(this.employees);
        
      });
    }
    
      adddemande(){
       this.newdemande.employee = this.auth.getUser().role;
+      this.newdemande.emp = this.auth.getUser().role.nom +" "+ this.auth.getUser().role.prenom
      this.servicedemande.adddemande (this.newdemande).subscribe(()=>{
        alert('Damande ajouter ');
        

@@ -6,6 +6,8 @@
         <th>ID</th>
         <th>date de debut</th>
         <th>date de fin</th>
+        <th>Salle</th>
+        <th>Employee</th>
         <th>Delete</th>
         <th>Update</th>
       </tr>
@@ -15,7 +17,8 @@
         <td>{{ reservation.id }}</td>
         <td>{{ reservation.date_d }}</td>
         <td>{{ reservation.date_f }}</td>
-          
+        <td>{{ reservation.sal }}</td>
+        <td>{{ reservation.emp }}</td>
         
           <td><button type="button" class="btn btn-outline-danger" (click)="deletesalle(reservation.id)">Delete</button></td>
           <td>        <button type="submit" class="btn btn-outline-primary" (click)="resDetails(reservation.id)">Update</button>
