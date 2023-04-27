@@ -1,0 +1,21 @@
+version: '3'
+services:
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+  backend:
+    image: monback
+    ports:
+      - "8082:8082"
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge

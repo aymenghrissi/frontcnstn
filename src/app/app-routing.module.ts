@@ -26,6 +26,7 @@ import { LogicielComponent } from './logiciel/logiciel.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LogsComponent } from './logs/logs.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -52,6 +53,8 @@ const routes: Routes = [
   { path: 'logiciel', component: LogicielComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logs', component: LogsComponent },
+  
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({

@@ -10,12 +10,14 @@ import { UserAuthService } from '../services/user-auth.service';
 })
 export class NavbarComponent {
   constructor(public userauth : UserAuthService , private router : Router,public emp : ServiceemployeeService){}
+
   public isloggedin(){
     return this.userauth.isLoggedIn();
   }
+
   public logout() {
     this.userauth.clear();
+   
   }
-  
 
 }

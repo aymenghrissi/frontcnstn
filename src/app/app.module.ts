@@ -40,6 +40,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ServiceemployeeService } from './services/serviceemployee.service';
 import { LogsComponent } from './logs/logs.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { LogsComponent } from './logs/logs.component';
     LoginComponent,
     ForbiddenComponent,
     LogsComponent,
+    HomeComponent,
     
     
   ],
