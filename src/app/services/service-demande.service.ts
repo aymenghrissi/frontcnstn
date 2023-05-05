@@ -9,7 +9,7 @@ import { UserAuthService } from './user-auth.service';
 })
 export class ServiceDemandeService {
 
-  baseUrl = 'http://localhost:8082/demande';
+  baseUrl = 'http://192.168.5.154:8082/demande';
   constructor(private httpClient: HttpClient, private auth : UserAuthService) {}
   token = this.auth.getToken();
   requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+ this.token });
@@ -23,19 +23,19 @@ export class ServiceDemandeService {
   }
   deletedemande(id : Number){
     
-    return this.httpClient.delete('http://localhost:8082/demande/'+id,{ headers: this.requestHeader});
+    return this.httpClient.delete('http://192.168.5.154:8082/demande/'+id,{ headers: this.requestHeader});
   
   
   }
   updatedemande(id:Number , demande : Dem): Observable<Dem>{
-    const url='http://localhost:8082/demande/demandes/'
+    const url='http://192.168.5.154:8082/demande/demandes/'
   
     return this.httpClient.put<Dem>(url+id, demande,{ headers: this.requestHeader});
   
   }
   
   getdemandeById(id: Number){
-    const url='http://localhost:8082/demande/'
+    const url='http://192.168.5.154:8082/demande/'
     return this.httpClient.get( url+id,{ headers: this.requestHeader});
   }
 }

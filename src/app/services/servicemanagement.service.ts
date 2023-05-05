@@ -10,7 +10,7 @@ import { UserAuthService } from './user-auth.service';
 
 
 export class ServicemanagementService {
-  baseUrl = 'http://localhost:8082/dir';
+  baseUrl = 'http://192.168.5.154:8082/dir';
 constructor(private httpClient: HttpClient,private auth : UserAuthService) {}
 
 addManagement( management : any ) {
@@ -21,24 +21,24 @@ token = this.auth.getToken();
 requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
 
 getDirections() {
-  const url = 'http://localhost:8082/dir/directions';
+  const url = 'http://192.168.5.154:8082/dir/directions';
   return this.httpClient.get(url,{ headers: this.requestHeader});
 }
 deletedir(id : Number){
   
-  return this.httpClient.delete('http://localhost:8082/dir/'+id,{ headers: this.requestHeader});
+  return this.httpClient.delete('http://192.168.5.154:8082/dir/'+id,{ headers: this.requestHeader});
 
 
 }
 updatedir(id:Number , direction : Management): Observable<Management>{
-  const url='http://localhost:8082/dir/directions/'
+  const url='http://192.168.5.154:8082/dir/directions/'
 
   return this.httpClient.put<Management>(url+id, direction, { headers: this.requestHeader});
 
 }
 
 getDirectionById(id: Number){
-  const url='http://localhost:8082/dir/'
+  const url='http://192.168.5.154:8082/dir/'
   return this.httpClient.get( url+id, { headers: this.requestHeader} );
 }
 }
