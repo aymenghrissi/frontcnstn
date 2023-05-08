@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LogService {
-  baseUrl = 'http://localhost:8082/authenticate';
+  baseUrl = 'http://192.168.5.154:8082/authenticate';
   constructor(private httpClient: HttpClient) {}
   requestHeader = new HttpHeaders(
     {"No-Auth" : "True"}

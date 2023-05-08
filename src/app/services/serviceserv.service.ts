@@ -10,7 +10,7 @@ import { UserAuthService } from './user-auth.service';
 export class ServiceservService {
 
   constructor(private httpClient: HttpClient,private auth : UserAuthService) { }
-  baseUrl = 'http://localhost:8082/service';
+  baseUrl = 'http://192.168.5.154:8082/service';
   token = this.auth.getToken();
   requestHeader = new HttpHeaders({ 'Authorization': 'Bearer '+this.token });
 addservice( Serv : any ) {
@@ -20,24 +20,24 @@ addservice( Serv : any ) {
 }  
 
 getServices() {
-  const url = 'http://localhost:8082/service/list';
+  const url = 'http://192.168.5.154:8082/service/list';
   return this.httpClient.get(url);
 }
 deleteserv(id : Number){
   
-  return this.httpClient.delete('http://localhost:8082/service/'+id,{ headers: this.requestHeader});
+  return this.httpClient.delete('http://192.168.5.154:8082/service/'+id,{ headers: this.requestHeader});
 
 
 }
 updateserv(id:Number , service : Serv): Observable<Serv>{
-  const url='http://localhost:8082/service/services/'
+  const url='http://192.168.5.154:8082/service/services/'
 
   return this.httpClient.put<Serv>(url+id, service,{ headers: this.requestHeader});
 
 }
 
 getServiceById(id: Number){
-  const url='http://localhost:8082/service/'
+  const url='http://192.168.5.154:8082/service/'
   return this.httpClient.get( url+id,{ headers: this.requestHeader});
 }
 }

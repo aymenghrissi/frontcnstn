@@ -18,24 +18,24 @@ export class ServiceSalleService {
   }
 
   getsalle() {
-    const url = 'http://localhost:8082/salle/list';
+    const url = 'http://192.168.5.154:8082/salle/list';
     return this.httpClient.get(url,{ headers: this.requestHeader});
   }
   deletesalle(id : Number){
     
-    return this.httpClient.delete('http://localhost:8082/salle/'+id,{ headers: this.requestHeader});
+    return this.httpClient.delete('http://192.168.5.154:8082/salle/'+id,{ headers: this.requestHeader});
   
   
   }
   updatesalle(id:Number , salle : Sal): Observable<Sal>{
-    const url='http://localhost:8082/salle/salles/'
+    const url='http://192.168.5.154:8082/salle/salles/'
   
     return this.httpClient.put<Sal>(url+id, salle,{ headers: this.requestHeader});
   
   }
   
   getsalleById(id: Number){
-    const url='http://localhost:8082/salle/'
+    const url='http://192.168.5.154:8082/salle/'
     return this.httpClient.get( url+id,{ headers: this.requestHeader});
   }
 }
