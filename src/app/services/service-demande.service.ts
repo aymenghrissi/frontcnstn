@@ -35,7 +35,7 @@ export class ServiceDemandeService {
   }
   
   getdemandeById(id: Number){
-    const url='http://192.168.5.154:8082/demande/'
+    const url='http://localhost:8082/demande/'
     return this.httpClient.get( url+id,{ headers: this.requestHeader});
   }
 }

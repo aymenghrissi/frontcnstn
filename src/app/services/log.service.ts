@@ -5,13 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LogService {
-  baseUrl = 'http://192.168.5.154:8082/authenticate';
-  constructor(private httpClient: HttpClient) {}
-  requestHeader = new HttpHeaders(
-    {"No-Auth" : "True"}
-  );
-  login( logdata : any ) {
-    return this.httpClient.post(this.baseUrl ,logdata, {headers : this.requestHeader});
-  
-}
+  baseUrl = 'http://localhost:8082/authenticate';
+
+  constructor(private httpClient: HttpClient) { }
+
+  login(logdata: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    });
+
+    return this.httpClient.post(this.baseUrl, logdata, { headers });
+  }
 }
